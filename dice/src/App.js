@@ -7,7 +7,7 @@ function App() {
     <Flex>
       <Image src = "dices.png"/>
       <Stack>
-        <Heading as = "h1">The Dice Game </Heading>
+        <Heading as = "h1">The Dice Game</Heading>
       </Stack>
     </Flex>
     </div>
