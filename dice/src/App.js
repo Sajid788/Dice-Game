@@ -16,6 +16,7 @@ function App() {
   const [selectedNumber, setSelectedNumber] = useState();
   const [dice, setDice] = useState(1);
   const [error, setError] = useState(null);
+  const [score, setScore] = useState(0);
   const numbers = [1, 2, 3, 4, 5, 6];
 
   const handleStartGame = () => {
@@ -32,6 +33,13 @@ function App() {
     if(selectedNumber){
       const genrateNo = Math.ceil(Math.random()*6);
       setDice(genrateNo);
+
+      if(selectedNumber === genrateNo){
+        setScore((prev) => prev + genrateNo);
+      }else{
+        setScore((prev) => prev - 2);
+      }
+
     }else{
       setError("Please Select Number")
     }
@@ -74,13 +82,15 @@ function App() {
               <Image src={`/dice/dice${dice}.png`}/>
             </Box>
             <Text as="p" fontSize="x-large">Click on dice to roll</Text>
-            <Text fontSize="6xl" fontWeight="bold">0</Text>
+            <Text color={score > 0 ? "green" : "red"} fontSize="6xl" fontWeight="bold">
+              {score}
+              </Text>
             <Text fontSize="4xl" fontWeight="bold">Total Score</Text>
-            <Button>Reset Score</Button>
+            <Button onClick={ () => setScore(0)}>Reset Score</Button>
           </Stack>
           <Stack maxW="900px" mx="auto">
             <Heading as="h2">Game Rules:-</Heading>
-            <List>
+            <List >
               <ListItem>Select Number any number</ListItem>
               <ListItem>Click on dice image to roll it</ListItem>
               <ListItem>
