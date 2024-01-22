@@ -105,7 +105,7 @@ function App() {
         </div>
       ) : (
         <Flex justify="center" align="center">
-          <Image width="50%" src="dices.png" />
+          <Image width="50%" src="dices.png"/>
           <Stack>
             <Heading fontSize="xxx-large" as="h1">
               The Dice Game
