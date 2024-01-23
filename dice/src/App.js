@@ -43,8 +43,6 @@ function App() {
       setError("Please Select Number")
     }
   }
-
-  
   return (
     <div>
       {gameStart ? (
