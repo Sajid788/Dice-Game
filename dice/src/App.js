@@ -28,7 +28,6 @@ function App() {
     setSelectedNumber(value);
     setError(null)
   }
-  
   const genRandomNo = () =>{
     if(selectedNumber){
       const genrateNo = Math.ceil(Math.random()*6);
